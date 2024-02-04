@@ -1,5 +1,6 @@
 package app.mail.services;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,9 @@ public class MailHandler {
 
             javaMailSender.send(message);
 
-            System.out.println("Mail sended successfully!");
+            System.out.println("[" + LocalDateTime.now() + "]: " + "Mail sended successfully!");
         } catch (MailException e) {
-            System.out.println(e);
+            System.out.println("[" + LocalDateTime.now() + "]: " + e);
         }
     }
 }
